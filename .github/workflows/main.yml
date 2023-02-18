@@ -1,1 +1,16 @@
+name: Print Node Version
+on:
+  push:
+    branches:
+      - main
 
+jobs:
+  print_version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18.x"
+      - name: Print Node Version
+        run: node -v
